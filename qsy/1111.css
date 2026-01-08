@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 50px; 
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px; 
+}
+
+.footer-intro h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-intro p {
+  max-width: 400px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-links h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-subscribe h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-subscribe p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-subscribe input {
+  padding: 8px;
+  width: 200px;
+  border: none;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.footer-subscribe button {
+  padding: 8px 25px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #333; 
+}
+/* ========== 新增页脚响应式适配规则 ========== */
+/* 平板设备 (最大宽度 1024px) */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 30px 30px; /* 减小左右内边距 */
+  }
+  .footer-intro h2 {
+    font-size: 26px; /* 缩小标题字号 */
+  }
+  .footer-intro p {
+    max-width: 350px; /* 缩小介绍文本宽度 */
+    font-size: 13px;
+  }
+  .footer-links h3, .footer-subscribe h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    font-size: 13px;
+  }
+  .footer-subscribe input {
+    width: 180px; /* 缩小输入框宽度 */
+    padding: 7px;
+  }
+  .footer-subscribe button {
+    padding: 7px 20px;
+    font-size: 13px;
+  }
+  .footer-copyright {
+    font-size: 11px;
+    padding-top: 12px;
+  }
+}
+
+/* 大屏手机 (最大宽度 768px) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 25px 20px;
+  }
+  .footer-container {
+    flex-wrap: wrap; /* 允许子元素换行 */
+    gap: 25px; /* 增加换行后模块间距 */
+    justify-content: flex-start; /* 左对齐 */
+  }
+  .footer-intro {
+    width: 100%; /* 介绍模块占满整行 */
+    margin-bottom: 10px;
+  }
+  .footer-intro p {
+    max-width: 100%; /* 文本占满宽度 */
+  }
+  .footer-links, .footer-subscribe {
+    width: calc(50% - 12.5px); /* 链接/订阅各占半行 */
+  }
+  .footer-subscribe input {
+    width: 100%; /* 输入框占满父容器宽度 */
+  }
+}
+
+/* 小屏手机 (最大宽度 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 15px; /* 进一步减小内边距 */
+  }
+  .footer-container {
+    flex-direction: column; /* 改为垂直布局 */
+    gap: 20px;
+  }
+  .footer-intro h2 {
+    font-size: 24px;
+  }
+  .footer-intro p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .footer-links, .footer-subscribe {
+    width: 100%; /* 链接/订阅都占满整行 */
+  }
+  .footer-links h3, .footer-subscribe h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .footer-links li {
+    margin-bottom: 6px;
+  }
+  .footer-links a {
+    font-size: 12px;
+  }
+  .footer-subscribe p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .footer-subscribe input {
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+  .footer-subscribe button {
+    padding: 6px 18px;
+    font-size: 12px;
+    width: 100%; /* 按钮占满宽度，方便触控 */
+  }
+  .footer-copyright {
+    font-size: 10px;
+    padding-top: 10px;
+  }
+}
+
+/* 极窄屏适配 (最大宽度 375px) */
+@media (max-width: 375px) {
+  .footer-intro h2 {
+    font-size: 22px;
+  }
+  .footer-container {
+    gap: 15px;
+  }
+}

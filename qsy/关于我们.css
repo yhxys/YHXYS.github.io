@@ -1,0 +1,660 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0a5f91;
+    --secondary-color: #048b48;
+    --accent-color: #490609;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --light-gray: #e9ecef;
+    
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --heading-font: 'Georgia', 'Times New Roman', serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(92, 86, 86, 0.1);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden;
+}
+
+.container4 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.mb-5 { margin-bottom: 3rem; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+.btn-accent {
+    background-color: var(--accent-color);
+}
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-family: var(--main-font);
+    transition: var(--transition);
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out;
+}
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.logo span {
+    color: var(--accent-color);
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 0;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.about-hero {
+    padding: 6rem 0;
+    background: rgb(131, 143, 123);
+    text-align: center;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.blog-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: black;
+}
+
+.about-content {
+    max-width: 900px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow-hover);
+}
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.skills-section {
+    margin-bottom: 5rem;
+}
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.skill-bar {
+    height: 10px;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skill-level {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    border-radius: 5px;
+    animation: fillBar 1.5s ease-out forwards;
+    transform-origin: left;
+}
+@keyframes fillBar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.timeline-section {
+    margin-bottom: 5rem;
+}
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    animation: fadeInLeft 0.8s ease-out;
+}
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    transform: rotate(45deg);
+    top: 15px;
+}
+.timeline-item:nth-child(odd) .timeline-content::after { right: -10px; }
+.timeline-item:nth-child(even) .timeline-content::after { left: -10px; }
+.timeline-date {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+
+.contact-section {
+    margin-bottom: 5rem;
+    text-align: center; 
+}
+.contact-info {
+    margin: 1.5rem 0;
+}
+.contact-info p {
+    margin-bottom: 0.8rem;
+}
+
+.contact-section .btn {
+    display: block;
+    margin: 20px auto 0;
+    width: fit-content;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+.footer-links h4, .footer-newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+.footer-links h4::after, .footer-newsletter h4::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+.footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+    }
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    .timeline-content::after {
+        left: -10px !important;
+    }
+}
+
+/* ========== 补充响应式适配规则（基于原代码扩展） ========== */
+/* 平板设备 (最大宽度 1024px) */
+@media (max-width: 1024px) {
+  /* 通用样式适配 */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  /* 关于页适配 */
+  .about-hero {
+    padding: 5rem 0;
+  }
+  .about-intro {
+    gap: 2.5rem;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* 时间线适配 */
+  .timeline {
+    max-width: 700px;
+  }
+  .timeline-content {
+    padding: 18px;
+  }
+
+  /* 页脚适配 */
+  .footer-content {
+    gap: 1.8rem;
+  }
+  .footer-logo {
+    font-size: 1.6rem;
+  }
+  .footer-links h4, .footer-newsletter h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* 大屏手机 (最大宽度 768px) - 补充原768px断点的细节 */
+@media (max-width: 768px) {
+  /* 通用样式补充 */
+  .container4 {
+    width: 95%;
+    padding: 0 10px;
+  }
+  .mb-5 {
+    margin-bottom: 2.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+
+  /* 导航补充 */
+  .logo {
+    font-size: 1.6rem;
+  }
+  .nav-links {
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  /* 关于页补充 */
+  .about-hero {
+    padding: 4rem 0;
+  }
+  .blog-description {
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+  .about-content {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  /* 技能板块补充 */
+  .skills-section {
+    margin-bottom: 4rem;
+  }
+  .skill-item {
+    margin-bottom: 1.2rem;
+  }
+  .skill-bar {
+    height: 8px;
+  }
+
+  /* 时间线补充 */
+  .timeline-section {
+    margin-bottom: 4rem;
+  }
+  .timeline::after {
+    left: 25px;
+    width: 4px;
+  }
+  .timeline-item {
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+  .timeline-content {
+    padding: 15px;
+  }
+  .timeline-content::after {
+    width: 16px;
+    height: 16px;
+    top: 12px;
+  }
+
+  /* 联系板块补充 */
+  .contact-section {
+    margin-bottom: 4rem;
+  }
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+
+  /* 页脚补充 */
+  footer {
+    padding: 3rem 0 1.5rem;
+  }
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 小屏手机 (最大宽度 480px) */
+@media (max-width: 480px) {
+  /* 通用样式适配 */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .btn {
+    padding: 9px 20px;
+    font-size: 0.9rem;
+    border-radius: 25px;
+  }
+  .form-control {
+    padding: 10px;
+  }
+
+  /* 导航适配 */
+  .logo {
+    font-size: 1.4rem;
+  }
+  .hamburger {
+    font-size: 1.3rem;
+  }
+
+  /* 关于页适配 */
+  .about-hero {
+    padding: 3rem 0;
+  }
+  .about-intro {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 技能板块适配 */
+  .skills-section {
+    margin-bottom: 3rem;
+  }
+  .skill-name {
+    font-size: 0.95rem;
+  }
+
+  /* 时间线适配 */
+  .timeline-section {
+    margin-bottom: 3rem;
+  }
+  .timeline-item {
+    padding-left: 50px;
+    padding-right: 15px;
+  }
+  .timeline-date {
+    font-size: 0.95rem;
+  }
+  .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* 联系板块适配 */
+  .contact-section {
+    margin-bottom: 3rem;
+  }
+  .contact-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* 页脚适配 */
+  footer {
+    padding: 2.5rem 0 1rem;
+  }
+  .footer-logo {
+    font-size: 1.4rem;
+  }
+  .footer-links h4, .footer-newsletter h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-links li {
+    margin-bottom: 0.6rem;
+  }
+  .footer-newsletter form {
+    gap: 0.8rem;
+  }
+}
+
+/* 极窄屏适配 (最大宽度 375px) */
+@media (max-width: 375px) {
+  /* 通用样式极致适配 */
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  /* 时间线极致适配 */
+  .timeline-content {
+    padding: 12px;
+  }
+  .timeline-content::after {
+    width: 14px;
+    height: 14px;
+    top: 10px;
+  }
+
+  /* 页脚极致适配 */
+  .footer-content {
+    grid-template-columns: 1fr; /* 单列布局 */
+    gap: 1.2rem;
+  }
+}
+
+

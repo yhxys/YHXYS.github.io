@@ -1,0 +1,567 @@
+/* 统一全局重置样式（只保留一份，避免冲突） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+}
+
+/* 统一body样式（消除冲突） */
+body {
+    background-color: #f9fafb;
+    padding: 0; /* 移除多余padding，由子容器控制内边距 */
+}
+
+/* 作品卡片相关样式 */
+.works-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.work-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.work-card .card-title { /* 加前缀避免和其他card-title冲突 */
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 8px 16px;
+    background-color: #f0f2f5;
+    color: #444444;
+    border-radius: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0071e3;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0077ed;
+    transform: scale(1.05);
+}
+
+/* 分类筛选按钮 */
+.category-filter {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.filter-btn:active {
+    transform: scale(0.98);
+}
+
+/* about hero 区域 */
+.about-hero {
+    padding: 6rem 0;
+    background: rgb(131, 143, 123);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* 通用容器样式 */
+.containerss {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 通用标题样式 */
+.titles {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.title-line {
+    display: block;
+    width: 4rem;
+    height: 0.25rem;
+    background-color: #ef4444;
+    margin: 0.25rem auto 0;
+}
+
+/* 网格卡片容器（独立模块，不干扰技术卡片） */
+.card-container {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 网格卡片样式（独立模块） */
+.grid-card { /* 重命名避免冲突 */
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.grid-card .card-title { /* 加前缀避免冲突 */
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+/* ========== 核心：技术卡片模块（保证三卡片同行+居中） ========== */
+.yi {
+    background: #f3f3f5;
+    padding: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 核心卡片（wang）样式 */
+.wang {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgb(229, 230, 233);
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* 按钮样式 */
+.xuan {
+    padding: 12px 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+/* 技术卡片父容器（关键：强制三卡片同行+居中） */
+.yu {
+    display: flex;
+    flex-wrap: nowrap; /* 核心：禁止换行，确保三卡片始终在一行 */
+    gap: 20px;
+    justify-content: center; /* 整体居中 */
+    align-items: stretch; /* 卡片高度统一 */
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 10px;
+    /* 处理小屏：超出时横向滚动，避免换行 */
+    overflow-x: auto;
+    scrollbar-width: thin; /* 美化滚动条 */
+}
+
+/* 技术卡片样式（三卡片等分） */
+.wu {
+    flex: 1 1 33.333%; /* 强制三卡片各占1/3宽度 */
+    min-width: 280px; /* 小屏最小宽度，不挤压内容 */
+    max-width: 400px; /* 大屏最大宽度，避免过宽 */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 200px;
+}
+
+/* 技术卡片标题 */
+.xia {
+    color: #0066cc;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.xia span {
+    font-size: 20px;
+}
+
+/* 技术标签容器 */
+.lin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    flex: 1;
+    align-content: flex-start;
+}
+
+/* 技术标签样式 */
+.zhao {
+    background: #e6f0ff;
+    color: #0066cc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+/* 小屏适配：当宽度<900px时，允许横向滚动 */
+@media (max-width: 900px) {
+    .yu {
+        padding-bottom: 10px; /* 给滚动条留空间 */
+    }
+    .wu {
+        flex: 1 1 auto; /* 小屏时宽度自适应，不强制1/3 */
+    }
+}
+/* ========== 新增响应式适配规则 ========== */
+/* 平板设备 (最大宽度 1024px) */
+@media (max-width: 1024px) {
+  /* 作品卡片适配 */
+  .works-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .work-card .card-title {
+    font-size: 18px;
+  }
+  .card-desc {
+    font-size: 13px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+  .btn {
+    padding: 10px 28px;
+    font-size: 13px;
+  }
+
+  /* 技术卡片适配 */
+  .wu {
+    max-width: 350px;
+    min-height: 180px;
+    padding: 18px;
+  }
+  .xia {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  .zhao {
+    font-size: 15px;
+    padding: 5px 11px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 15px;
+  }
+
+  /* 通用标题/容器适配 */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .titles {
+    font-size: 1.4rem;
+  }
+  .containerss {
+    max-width: 1100px;
+    padding: 1.8rem 1rem;
+  }
+}
+
+/* 大屏手机 (最大宽度 768px) */
+@media (max-width: 768px) {
+  /* 作品卡片适配 */
+  .works-container {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+  }
+  .card-img {
+    height: 200px;
+  }
+  .card-content {
+    padding: 20px;
+  }
+
+  /* 分类筛选按钮适配 */
+  .category-filter {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .filter-btn {
+    padding: 7px 18px;
+    font-size: 13px;
+  }
+
+  /* 技术卡片适配 */
+  .yi {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .wang {
+    max-width: 90%;
+    padding: 30px 15px;
+    margin: 30px auto;
+  }
+  .wu {
+    min-width: 250px;
+    padding: 15px;
+  }
+
+  /* 网格卡片适配 */
+  @media (min-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(3, 1fr); /* 768px时改为3列，避免挤 */
+    }
+  }
+  .grid-card {
+    padding: 0.8rem;
+  }
+
+  /* 通用标题/容器适配 */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .titles {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .about-hero {
+    padding: 4rem 0;
+  }
+}
+
+/* 小屏手机 (最大宽度 480px) */
+@media (max-width: 480px) {
+  /* 作品卡片适配 */
+  .card-img {
+    height: 180px;
+  }
+  .card-content {
+    padding: 18px;
+  }
+  .tag-list {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 9px 24px;
+    font-size: 12px;
+  }
+
+  /* 技术卡片适配 */
+  .yu {
+    gap: 15px;
+    padding: 0 5px;
+  }
+  .wu {
+    min-width: 220px;
+    min-height: 160px;
+  }
+  .xia {
+    font-size: 16px;
+    gap: 6px;
+  }
+  .zhao {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .xuan {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+
+  /* 通用标题/容器适配 */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .titles {
+    font-size: 1.2rem;
+  }
+  .title-line {
+    width: 3rem;
+    height: 0.2rem;
+  }
+  .containerss {
+    padding: 1.5rem 0.8rem;
+  }
+  .about-hero {
+    padding: 3rem 0;
+  }
+
+  /* 网格卡片适配 */
+  .grid-card {
+    padding: 0.7rem;
+  }
+  @media (min-width: 640px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr); /* 小屏仍保持2列 */
+    }
+  }
+  @media (min-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr); /* 768px时改为2列，避免挤 */
+    }
+  }
+}
+
+/* 极窄屏适配 (最大宽度 375px) */
+@media (max-width: 375px) {
+  /* 技术卡片极致适配 */
+  .wu {
+    min-width: 200px;
+    padding: 12px;
+  }
+  .zhao {
+    font-size: 13px;
+    padding: 3px 9px;
+  }
+
+  /* 作品卡片极致适配 */
+  .card-img {
+    height: 160px;
+  }
+  .filter-btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+}
+
+/* 滚动条美化（适配webkit内核浏览器，如Chrome/Safari） */
+.yu::-webkit-scrollbar {
+  height: 6px;
+}
+.yu::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 3px;
+}
+.yu::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}

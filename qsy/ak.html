@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+        }
+       
+        .video-left {
+            flex: 1; 
+            min-width: 0; 
+        }
+        
+        .video-right {
+            width: 300px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+       
+        .video-title {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .video-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        
+        .video-player {
+            width: 100%;
+            height: auto;
+            border: none;
+            border-radius: 4px;
+        }
+       
+        .author-bar {   
+            display: block;
+            width: 100%;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px; 
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .author-name {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .author-desc {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.4;
+        }
+       
+        .author-actions {
+            display: flex;
+            flex-direction: column; 
+            gap: 10px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%; 
+        }
+        .btn-charge {
+            background-color: #f8f8f8;
+            color: #666;
+        }
+        .btn-follow {
+            background-color: #00a1d6;
+            color: #fff;
+        }
+        .follow-count {
+            font-size: 12px;
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+            }
+            .video-right {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+       
+        <div class="video-left">
+          
+            <h1 class="video-title">ak育苗示范视频</h1>
+            <div class="video-meta">114514 2025-12-08 16:30:00 未经作者授权，禁止转载</div>
+            
+                 
+<div class="video-left">
+  <h1 class="video-title">视频标题</h1>
+  <div class="video-meta">发布信息</div>
+  <video class="video-player" autoplay muted controls poster="xd.jpg">
+    <source src="img/ak.mp4" type="video/mp4">
+  </video>
+</div>
+        </div>
+
+        <div class="video-right">
+            <div class="author-bar">
+                <div class="author-info">
+                    <img src="img/xd.jpg" alt="作者头像" class="author-avatar">
+                    <div>
+                        <div class="author-name">王老师带你上赋能</div>
+                        <div class="author-desc">ak压枪比喝水简单</div>
+                    </div>
+                </div>
+                <div class="author-actions">
+                    <button class="btn btn-charge">充电</button>
+                    <button class="btn btn-follow">+关注 <span class="follow-count">42.5万</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

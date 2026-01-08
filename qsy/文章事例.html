@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBlog 博客|文章事例</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="1111.css">
+    <link rel="stylesheet" href="文章事例.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="code">Code</span><span class="blog">Blog</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="首页.html">首页</a></li>
+                <li><a href="个人文章.html">博客</a></li>
+                <li><a href="作品集.html">作品集</a></li>
+                <li><a href="关于我们.html">关于我们</a></li>
+                <li><a href="文章事例.html">文章示例</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--文章头部-->
+    <section class="article-header">
+        <div class="header">
+            <div class="article-meta">
+                <img class="img-date" src="img/cl.png" alt="">
+                <span class="date">2026年1月5日</span>
+                <img class="img-colla" src="img/colla.png" alt="">
+                <span class="collaborate">协作技巧</span>
+                <img class="img-cl" src="img/cl.png" alt="">
+                <span class="time">阅读时间:5分钟</span>
+                <img class="img-pl" src="img/pl.png" alt="">
+                <span class="count">0条评论</span>
+            </div>
+            <h4 class="x">4人团队高效沟通的3个实用方法</h4>
+            <span class="w">团队协作高效的实用方法</span>
+        </div>
+    </section>
+
+    <!--文章内容-->
+    <div class="bodys">
+        <div class="content-module">
+            <h1>什么是团队合作</h1>
+            <div class="img-box">
+                <img src="img/合作图片.jpg" alt="团队合作示意图">
+                <p>团队合作</p>
+            </div>
+            <p>团队合作是指一群具有不同技能、角色和责任的人，为了实现一个共同的目标，通过<span class="code-highlight">分工协作</span>、<span class="code-highlight">有效沟通</span>、互相支持、协同配合完成任务的过程。</p>
+            <p>它的核心不是简单的“一起工作”，而是通过成员间的优势互补、信息共享和责任共担，实现<span class="code-highlight">“1+1>2”</span>的协同效应，最终达成仅凭个人力量无法完成的目标。</p>
+            <h2>基本概念</h2>
+            <p>在落地团队合作模式前，理解以下核心概念能帮助团队建立统一的协作认知：</p>
+            <h3>1. 明确共同目标</h3>
+            <p>内容：团队全员对齐总目标，拆解为<span class="code-highlight">可量化</span>、有时间节点的子任务，确保方向一致。</p>
+            <p>关键动作：召开目标启动会、签署目标责任书、绘制<span class="code-highlight">目标拆解甘特图</span>。</p>
+            <div class="img-box">
+                <img src="img/团队协作(1).png" alt="共同目标拆解图">
+            </div>
+            <h3>2. 科学分工与角色分配</h3>
+            <p>根据成员能力、特长、职责划分任务，做到<span class="code-highlight">“人尽其才”</span>，避免重复劳动或责任真空。</p>
+            <p>关键原则：明确<span class="code-highlight">任务边界</span>、责任人、截止时间，形成书面分工清单。</p>
+            <div class="img-box">
+                <img src="img/团队协作(2).png" alt="分工与角色分配图">
+            </div>
+        </div>
+        
+        <!--分享-->
+        <div class="share-buttons">
+            <h3>分享这篇文章</h3>
+            <div class="share-links">
+                <a href="#" class="share-btn weibo"><img class="img-wb" src="img/wb.png" alt=""> 微博</a>
+                <a href="#" class="share-btn wechat"><img class="img-wx" src="img/wx.png" alt=""> 微信</a>
+            </div>
+        </div>
+    </div> <!-- 关键修复：闭合bodys容器，避免样式污染footer -->
+
+    <!-- 评论区 -->
+    <section class="comments-section">
+        <span class="section-title">评论 (12)</span>
+        <!-- 评论表单 -->
+        <div class="comment-form">
+            <span class="title">发表评论</span>
+            <form>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="name">姓名 *</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group half">
+                        <label for="email">邮箱 *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment">评论 *</label>
+                    <textarea id="comment" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">提交评论</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-intro">
+                <h2>CodeBlog</h2>
+                <p>一个分享编程知识、技术心得与生活感悟的博客。记录成长，分享知识，连接志同道合的朋友。</p>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="首页.html">首页</a></li>
+                    <li><a href="个人文章.html">博客文章</a></li>
+                    <li><a href="作品集.html">作品集</a></li>
+                    <li><a href="关于我们.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-subscribe">
+                <h3>订阅更新</h3>
+                <p>订阅获取最新文章和技术分享</p>
+                <input type="email" placeholder="输入您的邮箱">
+                <button>订阅</button>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2026 CodeBlog, 保留所有权利。 | 本页设计：王炫羿 张皓钦
+        </div>
+    </footer>
+</body>
+</html>

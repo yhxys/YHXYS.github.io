@@ -1,0 +1,536 @@
+/* 全局重置（第二段CSS的全局样式） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* 文章头部样式（第一段CSS） */
+.article-header {
+  padding: 5rem 0 3rem;
+  text-align: center;
+  background-color: rgba(67, 97, 238, 0.05);
+}
+.header {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #6b7280; /* 替换未定义的var变量 */
+  flex-wrap: wrap;
+}
+.img-date, .img-colla, .img-cl, .img-pl {
+  width: 20px;
+}
+.article-title-main { /* 替换原x类，语义化命名 */
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  font-weight: bold;
+}
+.article-title-sub { /* 替换原w类，语义化命名 */
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+/* 文章内容样式 - 增加专属前缀避免冲突 */
+.article-content h1 {
+  color: #667eea;
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+.article-content h2 {
+  color: #667eea;
+  font-size: 24px;
+  margin: 35px 0 15px;
+  padding-left: 8px;
+  border-left: 4px solid #667eea;
+}
+.article-content h3 {
+  font-size: 19px;
+  margin: 25px 0 12px;
+  color: #2d3748;
+}
+/* 仅作用于文章内容的段落样式 */
+.article-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  text-align: justify;
+}
+.article-content .img-box {
+  margin: 25px 0;
+  text-align: center;
+}
+.article-content .img-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.article-content .img-box p {
+  margin-top: 10px;
+  color: #718096;
+  font-style: italic;
+  text-align: center;
+}
+.bodys {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  color: #2d3748;
+  line-height: 1.8;
+  background-color: #f8f9fa;
+}
+
+/* 分享按钮样式 */
+.share-buttons {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: rgba(67, 97, 238, 0.05);
+  border-radius: 10px;
+}
+.share-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #1f2937; /* 替换未定义的var变量 */
+  font-weight: 600;
+  transition: all 0.3s ease; /* 替换未定义的var变量 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 替换未定义的var变量 */
+}
+.share-btn.weibo {
+  color: #e6162d;
+}
+.share-btn.wechat {
+  color: #07c160;
+}
+.img-wb {
+  width: 25px;
+}
+.img-wx {
+  width: 35px;
+}
+
+/* 评论区样式 */
+.comments-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.section-title {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  font-weight: bold;
+}
+.comment-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 替换未定义的var变量 */
+  margin-bottom: 3rem;
+}
+.comment-form .title {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  font-weight: bold;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #667eea; /* 替换未定义的var变量 */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* 替换未定义的var变量 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 替换未定义的var变量 */
+}
+.form-group.half {
+  flex: 1;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb; /* 替换未定义的var变量 */
+  border-radius: 5px;
+  transition: all 0.3s ease; /* 替换未定义的var变量 */
+}
+
+/* Footer样式（第二段CSS）- 增加专属样式，不受全局影响 */
+/* 修复footer样式被污染的问题 - 精准选择器，避免影响图片 */
+.footer {
+  max-width: none !important;
+  margin: 0 !important;
+  background-color: #000 !important;
+}
+
+.footer-intro > h2 { /* 只选中footer-intro下的直接h2 */
+  color: #fff !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin: 0 0 10px 0 !important;
+  font-size: 28px !important; /* 恢复footer h2原尺寸 */
+}
+
+.footer-intro > p, .footer-subscribe > p { /* 只选中footer内的直接p标签 */
+  text-align: left !important;
+  margin-bottom: 0 !important;
+  color: #ccc !important;
+  font-size: 14px !important; /* 恢复footer p原尺寸 */
+  line-height: 1.5 !important;
+}
+
+.footer-links > h3, .footer-subscribe > h3 { /* 只选中footer内的直接h3标签 */
+  color: #fff !important;
+  margin: 0 0 15px 0 !important;
+  font-size: 18px !important; /* 恢复footer h3原尺寸 */
+}
+
+/* 强制恢复文章图片的原始样式，不受其他样式干扰 */
+.img-box img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important; /* 取消可能的固定宽度 */
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 恢复分享按钮里的图片尺寸 */
+.img-wb {
+  width: 25px !important;
+  height: auto !important;
+}
+
+.img-wx {
+  width: 35px !important;
+  height: auto !important;
+}
+
+/* 恢复文章meta里的小图标尺寸 */
+.img-date, .img-colla, .img-cl, .img-pl {
+  width: 20px !important;
+  height: auto !important;
+}
+
+/* ========== 新增响应式适配规则 ========== */
+/* 平板设备 (最大宽度 1024px) */
+@media (max-width: 1024px) {
+  /* 文章头部适配 */
+  .article-header {
+    padding: 4rem 0 2.5rem;
+  }
+  .article-title-main {
+    font-size: 1.8em;
+  }
+  .article-title-sub {
+    font-size: 0.95em;
+  }
+  .article-meta {
+    gap: 0.8rem;
+    font-size: 0.95em;
+  }
+
+  /* 文章内容适配 */
+  .bodys {
+    max-width: 900px;
+    padding: 25px;
+    line-height: 1.7;
+  }
+  .article-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+  }
+  .article-content h2 {
+    font-size: 22px;
+    margin: 30px 0 12px;
+  }
+  .article-content h3 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+  }
+  .article-content p {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  /* 分享按钮适配 */
+  .share-buttons {
+    margin: 2.5rem 0;
+    padding: 1.8rem;
+  }
+  .share-btn {
+    padding: 9px 18px;
+    font-size: 0.95em;
+  }
+  .img-wb {
+    width: 22px !important;
+  }
+  .img-wx {
+    width: 32px !important;
+  }
+
+  /* 评论区适配 */
+  .comments-section {
+    max-width: 700px;
+    margin: 2.5rem auto;
+  }
+  .comment-form {
+    padding: 1.8rem;
+  }
+  .btn {
+    padding: 11px 26px;
+    font-size: 0.95em;
+  }
+  .form-control {
+    padding: 11px;
+  }
+}
+
+/* 大屏手机 (最大宽度 768px) */
+@media (max-width: 768px) {
+  /* 文章头部适配 */
+  .article-header {
+    padding: 3.5rem 0 2rem;
+  }
+  .header {
+    width: 95%;
+  }
+  .article-title-main {
+    font-size: 1.6em;
+  }
+  .article-meta {
+    gap: 0.7rem;
+    font-size: 0.9em;
+  }
+  .img-date, .img-colla, .img-cl, .img-pl {
+    width: 18px !important;
+  }
+
+  /* 文章内容适配 */
+  .bodys {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+  .article-content h1 {
+    font-size: 24px;
+  }
+  .article-content h2 {
+    font-size: 20px;
+    margin: 25px 0 10px;
+  }
+  .article-content h3 {
+    font-size: 17px;
+  }
+  .article-content .img-box {
+    margin: 20px 0;
+  }
+
+  /* 分享按钮适配 */
+  .share-buttons {
+    margin: 2rem 0;
+    padding: 1.5rem 1rem;
+  }
+  .share-links {
+    gap: 0.8rem;
+  }
+  .share-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  /* 评论区适配 */
+  .comments-section {
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+  .comment-form {
+    padding: 1.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .section-title {
+    font-size: 1.3em;
+  }
+  .comment-form .title {
+    font-size: 1.1em;
+  }
+
+  /* 页脚适配 */
+  .footer-intro > h2 {
+    font-size: 24px !important;
+  }
+  .footer-links > h3, .footer-subscribe > h3 {
+    font-size: 16px !important;
+  }
+  .footer-intro > p, .footer-subscribe > p {
+    font-size: 13px !important;
+  }
+}
+
+/* 小屏手机 (最大宽度 480px) */
+@media (max-width: 480px) {
+  /* 文章头部适配 */
+  .article-header {
+    padding: 2.5rem 0 1.5rem;
+  }
+  .article-title-main {
+    font-size: 1.4em;
+  }
+  .article-title-sub {
+    font-size: 0.9em;
+  }
+  .article-meta {
+    gap: 0.5rem;
+    font-size: 0.85em;
+  }
+
+  /* 文章内容适配 */
+  .bodys {
+    padding: 15px 10px;
+  }
+  .article-content h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .article-content h2 {
+    font-size: 18px;
+    margin: 20px 0 8px;
+    padding-left: 6px;
+    border-left-width: 3px;
+  }
+  .article-content h3 {
+    font-size: 16px;
+  }
+  .article-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* 分享按钮适配 */
+  .share-buttons {
+    margin: 1.5rem 0;
+    padding: 1.2rem 0.8rem;
+  }
+  .share-links {
+    gap: 0.7rem;
+  }
+  .share-btn {
+    padding: 7px 14px;
+    font-size: 0.85em;
+  }
+  .img-wb {
+    width: 20px !important;
+  }
+  .img-wx {
+    width: 30px !important;
+  }
+
+  /* 评论区适配 */
+  .comment-form {
+    padding: 1.2rem;
+  }
+  .btn {
+    padding: 10px 22px;
+    font-size: 0.9em;
+  }
+  .form-control {
+    padding: 10px;
+  }
+  .form-group label {
+    font-size: 0.9em;
+    margin-bottom: 0.4rem;
+  }
+
+  /* 页脚适配 */
+  .footer-intro > h2 {
+    font-size: 22px !important;
+  }
+  .footer-links > h3, .footer-subscribe > h3 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* 极窄屏适配 (最大宽度 375px) */
+@media (max-width: 375px) {
+  /* 文章头部极致适配 */
+  .article-title-main {
+    font-size: 1.3em;
+  }
+  .img-date, .img-colla, .img-cl, .img-pl {
+    width: 16px !important;
+  }
+
+  /* 分享按钮极致适配 */
+  .share-btn {
+    padding: 6px 12px;
+    gap: 0.4rem;
+  }
+  .img-wb {
+    width: 18px !important;
+  }
+  .img-wx {
+    width: 28px !important;
+  }
+
+  /* 评论区极致适配 */
+  .comment-form {
+    padding: 1rem;
+  }
+  .btn {
+    padding: 9px 20px;
+    font-size: 0.85em;
+  }
+}

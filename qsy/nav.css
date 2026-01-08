@@ -1,0 +1,220 @@
+/* 全局变量定义（方便统一管理样式） */
+:root {
+  --heading-font: "微软雅黑", sans-serif;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "微软雅黑", sans-serif;
+}
+
+/* 导航栏基础样式 */
+.navbar {
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+  padding: 20px 0;
+  position: sticky; /* 可选：导航栏吸顶，提升体验 */
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo .code {
+  color: #0066cc;
+}
+
+.logo .blog {
+  color: #e63946;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  transition: var(--transition);
+  font-weight: bold;
+  display: inline-block; /* 让transform生效 */
+}
+
+.nav-menu li a:hover {
+  color: #0066cc;
+  transform: scale(1.02);
+}
+
+/* 技能区基础样式 */
+.skills {
+  background-color: rgb(218, 214, 214);
+  padding: 5rem 0px;
+}
+
+.containers {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-family: var(--heading-font);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* 标签区基础样式 */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  gap: 1rem;
+  margin: 0px auto;
+}
+
+.tag {
+  background-color: white;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: var(--transition);
+  animation: 0.5s ease-out 0s 1 normal none running fadeIn;
+  font-size: 20px;
+}
+
+.tag:hover {
+  color: #0367cb;
+  transform: scale(1.05); /* 新增hover缩放，提升交互 */
+}
+
+/* 动画补全（原代码引用了fadeIn但未定义） */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== 响应式适配核心 - 媒体查询 ========== */
+/* 平板设备（最大宽度1024px） */
+@media (max-width: 1024px) {
+  /* 导航栏适配 */
+  .logo {
+    font-size: 24px; /* 缩小logo字号 */
+  }
+  .nav-menu {
+    gap: 20px; /* 减小菜单间距 */
+  }
+  .nav-menu li a {
+    font-size: 18px; /* 缩小菜单字号 */
+  }
+
+  /* 技能区适配 */
+  .section-title {
+    font-size: 2rem; /* 缩小标题字号 */
+    margin-bottom: 2.5rem;
+  }
+  .tag {
+    font-size: 18px; /* 缩小标签字号 */
+    padding: 8px 18px; /* 缩小标签内边距 */
+  }
+  .skills {
+    padding: 4rem 0; /* 减小技能区上下内边距 */
+  }
+}
+
+/* 大屏手机（最大宽度768px） */
+@media (max-width: 768px) {
+  /* 导航栏适配 - 关键：菜单换行/简化 */
+  .nav-container {
+    flex-direction: column; /* 导航栏改为垂直布局 */
+    gap: 15px; /* 增加logo和菜单的间距 */
+  }
+  .nav-menu {
+    gap: 15px;
+    flex-wrap: wrap; /* 菜单项过多时换行 */
+    justify-content: center; /* 菜单居中 */
+  }
+  .nav-menu li a {
+    font-size: 16px;
+  }
+
+  /* 技能区适配 */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .tag {
+    font-size: 16px;
+    padding: 7px 16px;
+  }
+  .skills {
+    padding: 3rem 0;
+  }
+  .tags {
+    max-width: 90%; /* 标签容器占满宽度，避免留白 */
+    gap: 0.8rem;
+  }
+}
+
+/* 小屏手机（最大宽度480px） */
+@media (max-width: 480px) {
+  /* 导航栏极致适配 */
+  .navbar {
+    padding: 15px 0; /* 减小导航栏上下内边距 */
+  }
+  .logo {
+    font-size: 22px;
+  }
+  .nav-menu {
+    gap: 10px;
+  }
+  .nav-menu li a {
+    font-size: 15px;
+  }
+
+  /* 技能区极致适配 */
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tag {
+    font-size: 15px;
+    padding: 6px 14px;
+    border-radius: 25px; /* 稍微减小圆角，适配小屏 */
+  }
+  .skills {
+    padding: 2.5rem 0;
+  }
+  .containers {
+    width: 95%; /* 容器占满更多宽度 */
+  }
+}
